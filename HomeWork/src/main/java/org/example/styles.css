@@ -1,3 +1,13 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f9;
+}
+
 form {
     display: flex;
     align-items: center;
@@ -8,7 +18,9 @@ form {
 div {
     margin: 10px;
     padding: 20px;
-    background: cadetblue;
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ffecd2);
+    background-size: 600% 600%;
+    animation: gradientAnimation 5s ease infinite;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,8 +37,26 @@ button {
     margin: 10px;
     height: 30px;
     width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+button:hover {
+    background-color: #5f9ea0;
+    transform: scale(1.05);
+}
+
+/* Анимация градиента фона */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 @media (max-width: 320px) {
     div {
